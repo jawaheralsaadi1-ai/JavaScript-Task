@@ -80,6 +80,7 @@ async function getUserById(id) {
 // --- Bonus: nested route ---
 async function getCommentsForPost(postId) {
   // GET /posts/:id/comments
+    return getData(`/posts/${postId}/comments`, `comments for post #${postId}`);
 }
 
 // --- Demo runner ---
