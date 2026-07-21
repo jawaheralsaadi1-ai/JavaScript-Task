@@ -70,8 +70,13 @@ async function getPhotoById(id) {
 // (repeat the pattern)
 
 // --- Users ---
-// (repeat the pattern)
-
+async function getAllUsers() {
+  return getData("/users", "all users");
+}
+ 
+async function getUserById(id) {
+  return getData(`/users/${id}`, `user #${id}`);
+}
 // --- Bonus: nested route ---
 async function getCommentsForPost(postId) {
   // GET /posts/:id/comments
