@@ -50,10 +50,21 @@ async function getCommentById(id) {
   return getData(`/comments/${id}`, `comment #${id}`);
 }
 // --- Albums ---
-// (repeat the pattern)
-
+async function getAllAlbums() {
+  return getData("/albums", "all albums");
+}
+ 
+async function getAlbumById(id) {
+  return getData(`/albums/${id}`, `album #${id}`);
+}
 // --- Photos ---
-// (repeat the pattern)
+async function getAllPhotos() {
+  return getData("/photos", "all photos");
+}
+ 
+async function getPhotoById(id) {
+  return getData(`/photos/${id}`, `photo #${id}`);
+}
 
 // --- Todos ---
 // (repeat the pattern)
