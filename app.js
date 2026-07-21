@@ -36,6 +36,8 @@ async function getAllPosts() {
 }
 async function getPostById(id) {
   // call getData with the right endpoint
+    return getData(`/posts/${id}`, `post #${id}`);
+
    
 }
 
