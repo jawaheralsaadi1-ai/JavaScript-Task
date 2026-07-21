@@ -31,9 +31,12 @@ async function getData(endpoint, label) {
 // --- Posts ---
 async function getAllPosts() { 
   // call getData with the right endpoint
+    return getData("/posts", "all posts");
+
 }
 async function getPostById(id) {
   // call getData with the right endpoint
+   
 }
 
 // --- Comments ---
