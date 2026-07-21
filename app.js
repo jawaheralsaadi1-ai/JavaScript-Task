@@ -12,11 +12,24 @@ const BASE_URL = "https://jsonplaceholder.typicode.com";
 // It should: fetch(url) -> check response.ok -> response.json() -> console.log -> return data
 // Wrap it all in try/catch.
 async function getData(endpoint, label) {
-  // code here
+     try {
+     console.log(`\n--- Fetching ${label} (GET ${endpoint}) ---`);
+    const response = await fetch(`${BASE_URL}${endpoint}`);
+
+ if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+     const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error(`Failed to fetch ${label}:`, error.message);
+  }
 }
 
 // --- Posts ---
-async function getAllPosts() {
+async function getAllPosts() { 
   // call getData with the right endpoint
 }
 async function getPostById(id) {
