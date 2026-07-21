@@ -94,7 +94,7 @@ async function main() {
   // call a handful of the functions above so you get console output when you run this file
     await getAllUsers();          // full list, 10 users
     await getAllTodos();          // full list, 200 todos
-    
+
      // --- GET ONE BY ID (one call per resource, as required) ---
   await getPostById(1);
   await getUserById(5);
@@ -105,8 +105,24 @@ async function main() {
  
   // --- BONUS: nested route ---
   await getCommentsForPost(1);
+    // Uncomment these if you want to see the FULL large lists too:
+  // await getAllPosts();
+  // await getAllComments();
+  // await getAllAlbums();
+  // await getAllPhotos();
  
 }
 
 
 main();
+// Export everything to import these functions
+// to the bonus index.html.
+export {
+  getAllPosts, getPostById,
+  getAllComments, getCommentById,
+  getAllAlbums, getAlbumById,
+  getAllPhotos, getPhotoById,
+  getAllTodos, getTodoById,
+  getAllUsers, getUserById,
+  getCommentsForPost,
+}
