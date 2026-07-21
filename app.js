@@ -86,13 +86,27 @@ async function getUserById(id) {
 async function getCommentsForPost(postId) {
   // GET /posts/:id/comments
     return getData(`/posts/${postId}/comments`, `comments for post #${postId}`);
+    
 }
 
 // --- Demo runner ---
 async function main() {
   // call a handful of the functions above so you get console output when you run this file
     await getAllUsers();          // full list, 10 users
-
+    await getAllTodos();          // full list, 200 todos
+    
+     // --- GET ONE BY ID (one call per resource, as required) ---
+  await getPostById(1);
+  await getUserById(5);
+  await getCommentById(3);
+  await getAlbumById(2);
+  await getPhotoById(10);
+  await getTodoById(7);
+ 
+  // --- BONUS: nested route ---
+  await getCommentsForPost(1);
+ 
 }
+
 
 main();
