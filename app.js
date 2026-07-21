@@ -42,8 +42,13 @@ async function getPostById(id) {
 }
 
 // --- Comments ---
-// (repeat the pattern)
-
+async function getAllComments() {
+  return getData("/comments", "all comments");
+}
+ 
+async function getCommentById(id) {
+  return getData(`/comments/${id}`, `comment #${id}`);
+}
 // --- Albums ---
 // (repeat the pattern)
 
