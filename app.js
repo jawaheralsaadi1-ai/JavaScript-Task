@@ -67,8 +67,13 @@ async function getPhotoById(id) {
 }
 
 // --- Todos ---
-// (repeat the pattern)
-
+async function getAllTodos() {
+  return getData("/todos", "all todos");
+}
+ 
+async function getTodoById(id) {
+  return getData(`/todos/${id}`, `todo #${id}`);
+}
 // --- Users ---
 async function getAllUsers() {
   return getData("/users", "all users");
@@ -86,6 +91,8 @@ async function getCommentsForPost(postId) {
 // --- Demo runner ---
 async function main() {
   // call a handful of the functions above so you get console output when you run this file
+    await getAllUsers();          // full list, 10 users
+
 }
 
 main();
